@@ -1,0 +1,28 @@
+{
+	"name": "graphql-pokedex",
+	"version": "1.0.0",
+	"description": "A Pokedex API made using GraphQL.",
+	"main": "server.js",
+	"scripts": {
+		"start": "node server.js"
+	},
+	"keywords": [
+		"graphql",
+		"pokemon",
+		"pokedex",
+		"api"
+	],
+	"author": "jmoisxhi",
+	"license": "MIT",
+	"dependencies": {
+		"@prisma/client": "^2.0.0-beta.1",
+		"graphql-yoga": "^1.18.3",
+		"prisma-client-lib": "^1.34.10"
+	},
+	"devDependencies": {
+		"@prisma/cli": "^2.0.0-beta.1",
+		"dotenv": "^8.2.0",
+		"eslint": "^6.8.0",
+		"nodemon": "^2.0.2"
+	}
+}

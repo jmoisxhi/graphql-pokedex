@@ -1,0 +1,175 @@
+type Query {
+  Pokedex(
+		where:    SearchCriteria, 
+		orderBy:  SortCriteria, 
+		skip:     String, 
+		after:    SeparationCriteria, 
+		before:   SeparationCriteria, 
+		first:    Int, 
+		last:     Int, 
+		select:   SelectCriteria, 
+		include:  IncludeCriteria
+	): [Pokemon!]
+}
+
+type Pokemon {
+  id:             Int
+  name:           String!
+  species:        String!
+  type1:          String!
+  type2:          String
+  abilities:      [String!]!
+  hp:             Int
+  defense:        Int
+  spDefense:      Int
+  attack:         Int
+  spAttack:       Int
+  speed:          Int
+  statTotal:      Int
+  eggCycle:       Int
+  catchRate:      Int
+  height:         Float!
+  weight:         Float!
+  mRatio:         Float!
+  fRatio:         Float!
+  generation:     Int
+  eggGroup1:      String!
+  eggGroup2:      String
+  legendary:      Boolean!
+  colour:         String!
+  evolutionLine:  Int!
+}
+
+input SortCriteria {
+  id:             SortOrder
+  name:           SortOrder
+  species:        SortOrder
+  type1:          SortOrder
+  type2:          SortOrder
+  hp:             SortOrder
+  defense:        SortOrder
+  spDefense:      SortOrder
+  attack:         SortOrder
+  spAttack:       SortOrder
+  speed:          SortOrder
+  statTotal:      SortOrder
+  eggCycle:       SortOrder
+  catchRate:      SortOrder
+  height:         SortOrder
+  weight:         SortOrder
+  mRatio:         SortOrder
+  fRatio:         SortOrder
+  generation:     SortOrder
+  eggGroup1:      SortOrder
+  eggGroup2:      SortOrder
+  legendary:      SortOrder
+  colour:         SortOrder
+  evolutionLine:  SortOrder
+}
+
+enum SortOrder { 
+  asc
+  desc
+}
+
+input SelectCriteria {
+  id:             Boolean
+  name:           Boolean
+  species:        Boolean
+  type1:          Boolean
+  type2:          Boolean
+  abilities:      Boolean
+  hp:             Boolean
+  defense:        Boolean
+  spDefense:      Boolean
+  attack:         Boolean
+  spAttack:       Boolean
+  speed:          Boolean
+  statTotal:      Boolean
+  eggCycle:       Boolean
+  catchRate:      Boolean
+  height:         Boolean
+  weight:         Boolean
+  mRatio:         Boolean
+  fRatio:         Boolean
+  generation:     Boolean
+  eggGroup1:      Boolean
+  eggGroup2:      Boolean
+  legendary:      Boolean
+  colour:         Boolean
+  evolutionLine:  Boolean
+}
+
+input SearchCriteria {
+  id:             IntFilter
+  name:           StringFilter
+  species:        StringFilter
+  type1:          StringFilter
+  type2:          StringFilter
+  hp:             IntFilter
+  defense:        IntFilter
+  spDefense:      IntFilter
+  attack:         IntFilter
+  spAttack:       IntFilter
+  speed:          IntFilter
+  statTotal:      IntFilter
+  eggCycle:       IntFilter
+  catchRate:      IntFilter
+  height:         FloatFilter
+  weight:         FloatFilter
+  mRatio:         FloatFilter
+  fRatio:         FloatFilter
+  generation:     IntFilter
+  eggGroup1:      StringFilter
+  eggGroup2:      StringFilter
+  legendary:      BooleanFilter
+  colour:         StringFilter
+  evolutionLine:  IntFilter
+  AND:            [SearchCriteria!]
+  OR:             [SearchCriteria!]
+  NOT:            [SearchCriteria!]
+}
+
+input IntFilter {
+  equals: Int
+  not: 		IntFilter
+  in: 		[Int]
+  notIn: 	[Int]
+  lt: 		Int
+  lte: 		Int
+  gt: 		Int
+	gte: 		Int
+}
+
+input StringFilter {
+  equals:     String
+  not:        StringFilter
+  in:         [String]
+  notIn:      [String]
+  lt:         String
+  lte:        String
+  gt:         String
+  gte:        String
+  contains:   String
+  startsWith: String
+  endsWith:   String
+}
+
+input BooleanFilter {
+  equals: Boolean
+  not:    BooleanFilter
+}
+
+input FloatFilter {
+  equals: Float
+  not: 		FloatFilter
+  in: 		[Float]
+  notIn: 	[Float]
+  lt: 		Float
+  lte: 		Float
+  gt: 		Float
+	gte: 		Float
+}
+
+input IncludeCriteria { evolutionLine:  Boolean }
+input SeparationCriteria { id: Int }
