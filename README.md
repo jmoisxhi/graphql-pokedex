@@ -27,7 +27,7 @@ DATABASE_URL=DBMS://USER:PASS@xxxxxxxx.xxx:PORT/xxxxxxxxxx
 ```
 Alternatively, you can enter into the `prisma/schema.prisma` file and insert the database URL into the `url` key (**NOT** recommended as this could compromise security).
 
-```json
+```prisma
 generator client {
   provider = "prisma-client-js"
 }
