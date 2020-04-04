@@ -1,7 +1,7 @@
 {
 	"name": "graphql-pokedex",
 	"version": "1.0.0",
-	"description": "A Pokedex API made using GraphQL.",
+	"description": "A generic Pokedex API server which implements GraphQL using Prisma and GraphQL Yoga for more efficient data fetching and strongly typed data than a traditional REST API.",
 	"main": "server.js",
 	"scripts": {
 		"start": "node server.js"
